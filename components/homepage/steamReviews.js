@@ -65,7 +65,7 @@ function SteamReview(props) {
     <div className="flex-none p-2 relative">
       <Link href={props.link} target="_blank">
         <a>
-          <Image src={props.image} width={props.width} height={props.height} />{" "}
+          <Image src={props.image} width={props.width} height={props.height} />
         </a>
       </Link>
     </div>
