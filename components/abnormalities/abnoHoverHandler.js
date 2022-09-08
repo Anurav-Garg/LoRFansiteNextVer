@@ -3,6 +3,7 @@ import { abnormalities } from "./abnormalityList";
 export function AbnoHoverHandler(event) {
   const bgImage = document.getElementById("bg-image");
 
+  
   if (event.target.closest("#abnormalities")) {
     for (let abnormality of abnormalities) {
       if (

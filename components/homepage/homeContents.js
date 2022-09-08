@@ -1,11 +1,11 @@
-import { Description } from "./description";
+import { HomeDescription } from "./homeDescription";
 import { IGNReview } from "./ignReview";
 import { SteamReviews } from "./steamReviews";
 
-export function Contents() {
+export function HomeContents() {
   return (
     <>
-      <Description />
+      <HomeDescription />
       <IGNReview />
       <SteamReviews />
     </>

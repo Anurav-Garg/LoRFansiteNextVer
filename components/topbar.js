@@ -6,7 +6,7 @@ const pages = pagesNames.map((page) => <PageLink page={page} key={page} />);
 
 export function Topbar() {
   return (
-    <div className="sticky top-0 left-0 right-0 backdrop-blur-md z-20 bg-slate-900/50 hover:bg-slate-900/80">
+    <div className="sticky top-0 left-0 right-0 backdrop-blur-md z-20 bg-slate-900/60 hover:bg-slate-900/80">
       <div className="max-w-[1440px] mx-auto flex flex-nowrap items-center px-4 py-2">
         <div className="p-1">
           <Link href="/">

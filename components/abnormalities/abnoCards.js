@@ -1,8 +1,18 @@
 import { AbnoCardLeft, AbnoCardRight } from "./abnoCard";
 import { abnormalities } from "./abnormalityList";
+import { AbnoHoverHandler } from "./abnoHoverHandler";
 
 export function AbnoCards() {
-  return <>{abnoCards}</>;
+  return (
+    <div
+      className="flex flex-col mt-16"
+      id="abnormalities"
+      onMouseOver={AbnoHoverHandler}
+    >
+      {abnoCards}
+      <div id="end-space" className="py-[74px]"></div>
+    </div>
+  );
 }
 
 for (let abno of abnormalities) {

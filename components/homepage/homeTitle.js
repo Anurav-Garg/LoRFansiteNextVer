@@ -1,4 +1,4 @@
-export function Title() {
+export function HomeTitle() {
   return (
     <div
       className="bg-slate-800 bg-opacity-80 backdrop-blur-sm text-center mt-80 py-4

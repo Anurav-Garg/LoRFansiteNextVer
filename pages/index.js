@@ -1,16 +1,11 @@
 import Head from "next/head";
 import { Topbar } from "../components/topbar";
-import { Title } from "../components/homepage/title";
-import { Contents } from "../components/homepage/contents";
-import { useEffect } from "react";
+import { HomeTitle } from "../components/homepage/homeTitle";
+import { HomeContents } from "../components/homepage/homeContents";
+import { ContentContainer } from "../components/common/contentContainer";
+import { PageContainer } from "../components/common/pageContainer";
 
 export default function Home() {
-  useEffect(() => {
-    document.body.classList.add("bg-[url(/assets/homepage.png)]");
-    document.body.classList.add("bg-fixed");
-    document.body.classList.add("bg-top");
-    document.body.classList.add("bg-cover");
-  });
   return (
     <>
       <Head>
@@ -19,14 +14,18 @@ export default function Home() {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
-      <Topbar />
-      <Title />
-
-      <div className="bg-gray-800 w-screen mt-96">
-        <div className="z-0 text-slate-300 text-xl max-w-6xl mx-auto py-8 lg:py-8">
-          <Contents />
+      <PageContainer
+        innerBackground="bg-[url('/assets/homepage.png')]"
+        handlers={{}}
+      >
+        <Topbar />
+        <HomeTitle />
+        <div className="bg-gray-800 w-screen mt-96">
+          <ContentContainer>
+            <HomeContents />
+          </ContentContainer>
         </div>
-      </div>
+      </PageContainer>
     </>
   );
 }

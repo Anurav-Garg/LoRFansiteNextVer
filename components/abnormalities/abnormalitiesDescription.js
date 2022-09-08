@@ -1,26 +1,22 @@
+import { PageHeading } from "../common/pageHeading";
+import { Section } from "../common/section";
+
 export function AbnormalitiesDescription() {
   return (
     <>
-      <h1 className="text-5xl text-yellow-400 font-semibold py-3">
-        MEET THE ABNORMALITIES
-      </h1>
+      <PageHeading heading="MEET THE ABNORMALITIES" />
 
-      <div id="contents">
-        <h2 className="text-4xl text-yellow-400 py-4">
-          Your friendly neighbourhood eldritch horrors beyond human
-          comprehension!
-        </h2>
-
+      <Section heading="Your friendly neighbourhood eldritch horrors beyond human comprehension!">
         <p className="py-4">
           Abnormalities are the horrific sanity ending murder machines you need
           to defeat to harness their power in order to obtain more books. You
           know, once again like real life libraries.
         </p>
-        <p>
+        <p className="py-4">
           To help you get started, we've provided a little introduction to some
           of these mistakes of God. Happy reading!
         </p>
-      </div>
+      </Section>
     </>
   );
 }

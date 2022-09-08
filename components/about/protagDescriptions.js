@@ -1,15 +1,9 @@
 import Image from "next/image";
+import { Section } from "../common/section";
 import { protagInfo } from "./protagInfo";
 
 export function ProtagDescriptions() {
-  return (
-    <>
-      <h2 className="text-4xl text-yellow-400 pb-4 pt-12">
-        Meet the Protagonists
-      </h2>
-      {protags}
-    </>
-  );
+  return <Section heading="Meet the Protagonists">{protags}</Section>;
 }
 
 const protags = protagInfo.map((protag, index) => {
@@ -43,7 +37,7 @@ const protags = protagInfo.map((protag, index) => {
     );
   }
   return (
-    <>
+    <div key={protag.name}>
       <Heading />
       <div className="flex pb-4">
         {!(index % 2) ? (
@@ -58,6 +52,6 @@ const protags = protagInfo.map((protag, index) => {
           </>
         )}
       </div>
-    </>
+    </div>
   );
 });
