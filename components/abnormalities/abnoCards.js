@@ -2,12 +2,18 @@ import { AbnoCardLeft, AbnoCardRight } from "./abnoCard";
 import { abnormalities } from "./abnormalityList";
 import { AbnoHoverHandler } from "./abnoHoverHandler";
 
-export function AbnoCards() {
+export function AbnoCards(props) {
   return (
     <div
       className="flex flex-col mt-16"
       id="abnormalities"
-      onMouseOver={AbnoHoverHandler}
+      onMouseOver={(event) =>
+        AbnoHoverHandler(
+          event,
+          props.setOuterBackground,
+          props.setInnerBackground
+        )
+      }
     >
       {abnoCards}
       <div id="end-space" className="py-[74px]"></div>

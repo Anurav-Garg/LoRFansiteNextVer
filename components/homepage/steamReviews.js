@@ -57,6 +57,7 @@ const reviewImages = reviews.map((review) => (
     image={review.image}
     height={review.height}
     width={review.width}
+    key={review.link}
   />
 ));
 
