@@ -6,12 +6,17 @@ const pages = pagesNames.map((page) => <PageLink page={page} key={page} />);
 
 export function Topbar() {
   return (
-    <div className="sticky top-0 left-0 right-0 backdrop-blur-md z-20 bg-slate-900/60 hover:bg-slate-900/80">
-      <div className="max-w-[1440px] mx-auto flex flex-nowrap items-center px-4 py-2">
+    <div className="sticky top-0 left-0 right-0 backdrop-blur-md z-20 bg-slate-900/60 hover:bg-slate-900/80 transition-all duration-500 ease-in-out">
+      <div className="max-w-[1440px] mx-auto flex flex-nowrap flex-none items-center px-4 py-2">
         <div className="p-1">
           <Link href="/">
-            <a>
-              <Image src="/assets/logo.png" width={128} height={64} />
+            <a className="hover:brightness-125 transition-all duration-200 ease-in-out">
+              <Image
+                src="/assets/logo.png"
+                width={128}
+                height={64}
+                layout={"fixed"}
+              />
             </a>
           </Link>
         </div>
@@ -22,7 +27,7 @@ export function Topbar() {
             <Link href="https://store.steampowered.com/app/1256670/Library_Of_Ruina/">
               <a
                 target="_blank"
-                className="px-4 py-2 rounded-xl bg-green-700 hover:bg-green-500 after:content-['_↗']"
+                className="px-4 py-2 rounded-xl bg-green-700 hover:bg-green-500 after:content-['_↗'] transition-colors duration-300 ease-in-out whitespace-nowrap"
               >
                 Steam Page
               </a>
@@ -41,7 +46,7 @@ function PageLink(props) {
   return (
     <div className="p-1">
       <Link href={"/" + page}>
-        <a className="px-4 py-2">{pageName}</a>
+        <a className="px-4 py-2 hover:underline">{pageName}</a>
       </Link>
     </div>
   );

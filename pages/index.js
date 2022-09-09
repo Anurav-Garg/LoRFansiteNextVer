@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Topbar } from "../components/topbar";
 import { HomeTitle } from "../components/homepage/homeTitle";
-import { HomeContents } from "../components/homepage/homeContents";
+import { HomeContent } from "../components/homepage/homeContent";
 import { ContentContainer } from "../components/common/contentContainer";
 import { PageContainer } from "../components/common/pageContainer";
 
@@ -14,18 +14,23 @@ export default function Home() {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
-      <PageContainer
-        innerBackground="bg-[url('/assets/homepage.png')]"
-        handlers={{}}
-      >
-        <Topbar />
-        <HomeTitle />
-        <div className="bg-gray-800 w-screen mt-96">
-          <ContentContainer>
-            <HomeContents />
-          </ContentContainer>
-        </div>
+      <PageContainer innerBackground="bg-[url('/assets/homepage.png')]">
+        <HomeContents />
       </PageContainer>
+    </>
+  );
+}
+
+function HomeContents() {
+  return (
+    <>
+      <Topbar />
+      <HomeTitle />
+      <div className="bg-gray-800 w-screen mt-96">
+        <ContentContainer>
+          <HomeContent />
+        </ContentContainer>
+      </div>
     </>
   );
 }

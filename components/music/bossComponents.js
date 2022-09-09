@@ -10,7 +10,9 @@ export function BossAudio(props) {
         preload="auto"
         controls
         loop
-        className="my-4"
+        className={`my-4 rounded-2xl transition-colors duration-500 ease-in-out ${
+          props.songName === props.playing ? props.colour : ""
+        }`}
         id={props.songName}
         onPlay={(event) =>
           PlayHandler(

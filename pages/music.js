@@ -12,7 +12,7 @@ export default function Music() {
         <title>Violence and Violins</title>
       </Head>
       <script src="../components/music/songHandlers.js" />
-      <PageContainer>
+      <PageContainer >
         <MusicContents />
       </PageContainer>
     </>

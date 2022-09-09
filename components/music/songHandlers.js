@@ -1,4 +1,4 @@
-import { songBackgrounds } from "./songBackgrounds";
+import { songStyle } from "./songStyle";
 
 export function PauseHandler(
   event,
@@ -31,9 +31,9 @@ export function PlayHandler(
   return;
 
   function PlayingStyler(bossName) {
-    setOuterBackground(songBackgrounds[bossName]);
+    setOuterBackground(songStyle[bossName].background);
 
-    setInnerBackground("bg-gray-800/0");
+    setInnerBackground("bg-black/50");
 
     setPlaying(bossName);
   }

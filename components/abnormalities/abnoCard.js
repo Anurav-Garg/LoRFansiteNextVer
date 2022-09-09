@@ -21,7 +21,7 @@ export function AbnoCardLeft(props) {
           </a>
         </Link>
         <div
-          className={`bg-gradient-to-b ${props.abnormality.grad1} ${props.abnormality.grad2} max-w-2xl -mt-[7.5rem] ml-[14.8rem] -z-10 relative rounded-xl hidden peer-hover:block hover:block`}
+          className={`bg-gradient-to-b ${props.abnormality.grad1} ${props.abnormality.grad2} max-w-2xl -mt-[7.5rem] ml-[14.8rem] -z-10 relative rounded-xl hidden peer-hover:block hover:block backdrop-blur`}
           id={props.abnormality.name + "desc"}
         >
           <p className="px-8 pt-16">{props.abnormality.pointers}</p>
@@ -52,7 +52,7 @@ export function AbnoCardRight(props) {
           </a>
         </Link>
         <div
-          className={`bg-gradient-to-b ${props.abnormality.grad1} ${props.abnormality.grad2} max-w-2xl -mt-[7.5rem] mr-[14.8rem] -z-10 relative rounded-xl hidden peer-hover:block hover:block float-right`}
+          className={`bg-gradient-to-b ${props.abnormality.grad1} ${props.abnormality.grad2} max-w-2xl -mt-[7.5rem] mr-[14.8rem] -z-10 relative rounded-xl hidden peer-hover:block hover:block float-right backdrop-blur`}
           id={props.abnormality.name + "desc"}
         >
           <div className={props.abnormality.text}>

@@ -12,7 +12,7 @@ export default function About() {
         <title>About LoR</title>
       </Head>
 
-      <PageContainer handlers={{}}>
+      <PageContainer>
         <Topbar />
         <ContentContainer>
           <GameDescription />
