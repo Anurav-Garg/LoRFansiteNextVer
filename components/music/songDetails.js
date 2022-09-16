@@ -35,7 +35,7 @@ export const songDetails = [
     playerStyle: "bg-red-600",
     song: "Iron Lotus",
     genre: "FIRE",
-    desc: `Theme for a w*man who just wants to avenge her dead husband. If being cute was a crime, Xiao would be in jail; for twelve charges of manslaughter via arson`,
+    desc: `Theme for a w*man who just wants to avenge her dead husband. If being cute was a crime, Xiao would be in jail; for twelve charges of manslaughter via arson.`,
     fact: `Despite the song's theming about rage and fire this is the only boss that is fully sane and in control of her emotions during the fight.`,
   },
   {

@@ -4,6 +4,7 @@ import { MusicDescription } from "../components/music/musicDescription";
 import { PageContainer } from "../components/common/pageContainer";
 import { ContentContainer } from "../components/common/contentContainer";
 import { SongBlocks } from "../components/music/songBlocks";
+import { MusicSurvey } from "../components/music/musicSurvey";
 
 export default function Music() {
   return (
@@ -11,8 +12,7 @@ export default function Music() {
       <Head>
         <title>Violence and Violins</title>
       </Head>
-      <script src="../components/music/songHandlers.js" />
-      <PageContainer >
+      <PageContainer>
         <MusicContents />
       </PageContainer>
     </>
@@ -29,6 +29,7 @@ function MusicContents(props) {
           setOuterBackground={props.setOuterBackground}
           setInnerBackground={props.setInnerBackground}
         />
+        <MusicSurvey />
       </ContentContainer>
     </>
   );
