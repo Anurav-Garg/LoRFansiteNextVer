@@ -1,15 +1,29 @@
+import { useState } from "react";
+
 export function MusicForm(props) {
+  const [latitude, setLatitude] = useState("");
+  const [longitude, setLongitude] = useState("");
+
+  const valueIsInvalid = function (value, range) {
+    if (value === "" || isNaN(value) || value < -range || value > range) {
+      return true;
+    }
+
+    return false;
+  };
+
   return (
     <form
       onSubmit={props.submissionHandler}
-      className="flex flex-col text-base text-center pt-8"
+      className={`flex flex-col text-base text-center pt-8 pb-${
+        props.selection === "yes" ? 36 : 4
+      }`}
     >
       <label htmlFor="hitlist-priority-select" className="pb-4">
         Do you agree that Library of Ruina has the best OST in any game ever?
       </label>
       <select
         name="hitlist"
-        id="hitlist-priority-select"
         className="bg-inherit border-2 border-slate-300 w-20 mx-auto backdrop-blur-md"
         value={props.selection}
         onChange={(e) => {
@@ -24,9 +38,51 @@ export function MusicForm(props) {
         </option>
       </select>
 
+      {props.selection === "no" && (
+        <div className="pt-8">
+          <label className="py-4">
+            Please enter your exact coordinates with as much precision as you
+            are able to provide 😇
+          </label>
+          <div className="flex justify-center items-center pt-4">
+            <div className="flex flex-col justify-center items-center px-16">
+              <label className="pb-1">Your Latitude in degrees:</label>
+              <input
+                className="bg-inherit border-2 border-slate-300 w-20 text-lg"
+                value={latitude}
+                onChange={(e) => setLatitude(e.target.value)}
+              />
+              <label
+                className={`text-xs text-red-500 py-2 opacity-${
+                  valueIsInvalid(latitude, 90) ? 100 : 0
+                }`}
+              >
+                Please enter a numerical value between -90 and 90
+              </label>
+            </div>
+            <div className="flex flex-col justify-center items-center px-16">
+              <label className="pb-1">Your Longitude in degrees:</label>
+              <input
+                className="bg-inherit border-2 border-slate-300 w-20 text-lg"
+                value={longitude}
+                onChange={(e) => setLongitude(e.target.value)}
+              />
+              <label
+                className={`text-xs text-red-500 py-2 opacity-${
+                  valueIsInvalid(longitude, 180) ? 100 : 0
+                }`}
+              >
+                Please enter a numerical value between -180 and 180
+              </label>
+            </div>
+          </div>
+        </div>
+      )}
+
       <button
         type="submit"
-        className="py-1 my-2 text-xl text-yellow-400 hover:text-yellow-200 backdrop-blur-md border-2 border-yellow-400 hover:border-yellow-200 w-24 rounded-lg mx-auto font-semibold transition-colors ease-in-out duration-150"
+        className={`py-1 my-2 text-xl ${(valueIsInvalid(longitude, 180) || valueIsInvalid(latitude, 90)) ? "text-gray-500 border-gray-500" : "text-yellow-400 hover:text-yellow-200 border-yellow-400 hover:border-yellow-200"} backdrop-blur-md border-2 w-24 rounded-lg mx-auto font-semibold transition-colors ease-in-out duration-150`}
+        disabled={valueIsInvalid(longitude, 180) || valueIsInvalid(latitude, 90)}
       >
         Submit
       </button>

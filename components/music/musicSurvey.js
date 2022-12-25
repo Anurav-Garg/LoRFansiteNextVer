@@ -34,9 +34,10 @@ export function MusicSurvey() {
 
   return (
     <Section heading="Your Thoughts: Survey">
-      {formSubmission === "yes" && <div>{"+50 Social Credit"}</div>}
-      {formSubmission === "no" && (
-        <div className="pb-44">
+      {formSubmission === "yes" ? (
+        <div>{"+50 Social Credit"}</div>
+      ) : (
+        <div className="pb-96">
           {
             "Thank you for your feedback! We will get back to you at your physical location in 3-5 business days 😇"
           }
