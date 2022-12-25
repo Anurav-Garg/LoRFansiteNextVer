@@ -6,13 +6,13 @@ export function SurveyYes() {
     <>
       <Link href="https://www.google.com/search?q=Therapists+near+me">
         <a className="text-blue-600 underline text-md" target="_blank">
-          Therapists near you
+          {"Therapists near you"}
         </a>
       </Link>
       <br />
       <Link href="https://www.google.com/search?q=Suicide+helpline">
         <a className="text-blue-600 underline text-md" target="_blank">
-          Suicide Helpline
+          {"Suicide Helpline"}
         </a>
       </Link>
 
@@ -23,8 +23,9 @@ export function SurveyYes() {
         <br />.<br />
         <br />.<br />
         <br />
-        ...buuut, before that, while you're still mentally ill, why not make the
-        most of it and play an amazing game?
+        {
+          "...buuut, before that, while you're still mentally ill, why not make the most of it and play an amazing game?"
+        }
       </p>
       <Link
         href="https://store.steampowered.com/app/1256670/Library_Of_Ruina/"
