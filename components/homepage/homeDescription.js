@@ -3,19 +3,21 @@ export function HomeDescription() {
     <>
       {/* Heading */}
       <h2 className="text-center text-5xl font-semibold pt-4">
-        He Turned Himself into a Book
+        {"He Turned Himself into a Book"}
       </h2>
       <h3 className="text-center text-4xl font-semibold pb-4">
-        Funniest Shit I've ever Seen
+        {"Funniest Shit I've ever Seen"}
       </h3>
 
       {/* Description */}
       <p className="text-center text-2xl p-8">
-        Invite guests into your library. Defeat them in combat to turn them into
-        books.
+        {
+          "Invite guests into your library. Defeat them in combat to turn them into books."
+        }
         <br />
-        I've never been to a library before so I can only imagine that's how
-        they work in real life.
+        {
+          "I've never been to a library before so I can only imagine that's how they work in real life."
+        }
       </p>
 
       {/* Opening Video */}

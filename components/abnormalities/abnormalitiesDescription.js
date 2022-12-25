@@ -13,8 +13,9 @@ export function AbnormalitiesDescription() {
           know, once again like real life libraries.
         </p>
         <p className="py-4">
-          To help you get started, we've provided a little introduction to some
-          of these mistakes of God. Happy reading!
+          {
+            "To help you get started, we've provided a little introduction to some of these mistakes of God. Happy reading!"
+          }
         </p>
       </Section>
     </>
