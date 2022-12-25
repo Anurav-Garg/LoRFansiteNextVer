@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function MusicForm(props) {
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
+  const [latitudeIsValid, setLatitudeisValid] = useState(false);
+  const [longitudeIsValid, setLongitudeisValid] = useState(false);
 
   const valueIsInvalid = function (value, range) {
     if (value === "" || isNaN(value) || value < -range || value > range) {
@@ -11,6 +13,11 @@ export function MusicForm(props) {
 
     return false;
   };
+
+  useEffect(() => {
+    setLatitudeisValid(!valueIsInvalid(latitude, 90));
+    setLongitudeisValid(!valueIsInvalid(longitude, 180));
+  }, [latitude, longitude]);
 
   return (
     <form
@@ -52,13 +59,13 @@ export function MusicForm(props) {
                 value={latitude}
                 onChange={(e) => setLatitude(e.target.value)}
               />
-              <label
-                className={`text-xs text-red-500 py-2 opacity-${
-                  valueIsInvalid(latitude, 90) ? 100 : 0
+              <div
+                className={`text-xs text-red-500 py-2 ${
+                  latitudeIsValid ? "opacity-0" : "opacity-100"
                 }`}
               >
                 Please enter a numerical value between -90 and 90
-              </label>
+              </div>
             </div>
             <div className="flex flex-col justify-center items-center px-16">
               <label className="pb-1">Your Longitude in degrees:</label>
@@ -67,13 +74,13 @@ export function MusicForm(props) {
                 value={longitude}
                 onChange={(e) => setLongitude(e.target.value)}
               />
-              <label
-                className={`text-xs text-red-500 py-2 opacity-${
-                  valueIsInvalid(longitude, 180) ? 100 : 0
+              <div
+                className={`text-xs text-red-500 py-2 ${
+                  longitudeIsValid ? "opacity-0" : "opacity-100"
                 }`}
               >
                 Please enter a numerical value between -180 and 180
-              </label>
+              </div>
             </div>
           </div>
         </div>
@@ -81,8 +88,14 @@ export function MusicForm(props) {
 
       <button
         type="submit"
-        className={`py-1 my-2 text-xl ${(valueIsInvalid(longitude, 180) || valueIsInvalid(latitude, 90)) ? "text-gray-500 border-gray-500" : "text-yellow-400 hover:text-yellow-200 border-yellow-400 hover:border-yellow-200"} backdrop-blur-md border-2 w-24 rounded-lg mx-auto font-semibold transition-colors ease-in-out duration-150`}
-        disabled={valueIsInvalid(longitude, 180) || valueIsInvalid(latitude, 90)}
+        className={`py-1 my-2 text-xl ${
+          props.selection === "no" && !(latitudeIsValid && longitudeIsValid)
+            ? "text-gray-500 border-gray-500"
+            : "text-yellow-400 hover:text-yellow-200 border-yellow-400 hover:border-yellow-200"
+        } backdrop-blur-md border-2 w-24 rounded-lg mx-auto font-semibold transition-colors ease-in-out duration-150`}
+        disabled={
+          props.selection === "no" && !(latitudeIsValid && longitudeIsValid)
+        }
       >
         Submit
       </button>
