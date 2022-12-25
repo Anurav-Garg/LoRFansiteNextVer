@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useWindowDimensions } from "../hooks/useWindowsDimensions";
 
 export function SteamReviews() {
   return (
@@ -62,11 +63,21 @@ const reviewImages = reviews.map((review) => (
 ));
 
 function SteamReview(props) {
+  const { height, width } = useWindowDimensions();
+
   return (
     <div className="flex-none p-2 relative">
       <Link href={props.link} target="_blank">
         <a>
-          <Image src={props.image} width={props.width} height={props.height} />
+          <img
+            src={props.image}
+            width={width * 0.9 > props.width ? props.width : width * 0.9}
+            height={
+              width * 0.9 > props.width
+                ? props.height
+                : (props.height * width * 0.9) / props.width
+            }
+          />
         </a>
       </Link>
     </div>

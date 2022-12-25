@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export function IGNReview() {
   return (
-    <div className="flex ml-12 -mr-12">
+    <div className="flex md:ml-12 md:-mr-12">
       <div className="basis-1/12"></div>
-      <div className="basis-11/12 flex items-center py-12">
-        <div className="basis-3/5 bg-slate-700 rounded-lg w-3/5 -mr-16 z-10 bg-opacity-60 backdrop-blur">
+      <div className="basis-11/12 flex flex-col-reverse md:flex-row items-center py-12">
+        <div className="md:basis-3/5 bg-slate-700 rounded-lg md:w-3/5 -mt-20 md:mt-0 md:-mr-16 z-10 bg-opacity-60 backdrop-blur">
           <div className="pl-2 pt-2 text-4xl -mb-4">{'"'}</div>
           <div className="mx-auto text-center p-4 italic">
             {
@@ -17,8 +17,8 @@ export function IGNReview() {
             {"~IGN (Impotent Gaymers' Network)"}
           </div>
         </div>
-        <div className="basis-2/5">
-          <Image
+        <div className="md:basis-2/5 w-4/5">
+          <img
             src="/assets/gameplay.png"
             layout="responsive"
             width={1920}

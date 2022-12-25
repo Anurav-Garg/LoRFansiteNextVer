@@ -1,4 +1,8 @@
+import { useWindowDimensions } from "../hooks/useWindowsDimensions";
+
 export function HomeDescription() {
+  const { height, width } = useWindowDimensions();
+
   return (
     <>
       {/* Heading */}
@@ -23,8 +27,8 @@ export function HomeDescription() {
       {/* Opening Video */}
       <div className="flex flex-col justify-center items-center">
         <iframe
-          width="560"
-          height="315"
+          width={width > 768 ? 560 : width * 0.7}
+          height={width > 768 ? 315 : Math.round((315 * width * 0.7) / 560)}
           src="https://www.youtube.com/embed/ofmYqXfjFs8"
           title="YouTube video player"
           frameBorder="0"
