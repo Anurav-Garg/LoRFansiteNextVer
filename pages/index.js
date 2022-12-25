@@ -26,7 +26,7 @@ function HomeContents() {
     <>
       <Topbar />
       <HomeTitle />
-      <div className="bg-gray-800 w-screen mt-96">
+      <div className="bg-gray-800 w-full mt-96">
         <ContentContainer>
           <HomeContent />
         </ContentContainer>
