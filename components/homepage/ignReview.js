@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export function IGNReview() {
   return (
     <div className="flex md:ml-12 md:-mr-12">
