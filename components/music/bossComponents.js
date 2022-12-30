@@ -54,12 +54,12 @@ export function BossIcon(props) {
 
 export function BossDetails(props) {
   return (
-    <div className="pl-4 self-center flex flex-col">
+    <div className="px-4 md:pl-4 self-center flex flex-col">
       <div className="flex justify-center text-2xl">
-        <p className="px-12">
+        <p className="md:px-12 text-center">
           <strong>Song Name</strong>: {props.boss.song}
         </p>
-        <p className="px-12">
+        <p className="px-4 md:px-12 text-center">
           <strong>Genre</strong>: {props.boss.genre}
         </p>
       </div>
