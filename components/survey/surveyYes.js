@@ -4,6 +4,7 @@ import Link from "next/link";
 export function SurveyYes() {
   return (
     <>
+      <h3 className="text-3xl py-4">Please Seek Help.</h3>
       <Link href="https://www.google.com/search?q=Therapists+near+me">
         <a className="text-blue-600 underline text-md" target="_blank">
           {"Therapists near you"}
