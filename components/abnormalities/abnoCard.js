@@ -57,7 +57,7 @@ export function AbnoCardRight(props) {
               </div>
             </a>
           </Link>
-          <div className="relative float-right">
+          <div className="relative float-right md:hidden">
             <Image
               src={`/assets/abnoCards/${props.abnormality.name}.png`}
               width={2220 / 3.5}
