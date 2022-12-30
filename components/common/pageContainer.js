@@ -19,7 +19,7 @@ export function PageContainer(props) {
 
   return (
     <div
-      className={`${outerBackground} bg-fixed md:bg-top bg-cover min-h-screen min-w-screen -z-10`}
+      className={`${outerBackground} bg-fixed bg-top bg-cover h-full min-h-screen min-w-screen -z-10`}
       id="bg-image"
     >
       <div
