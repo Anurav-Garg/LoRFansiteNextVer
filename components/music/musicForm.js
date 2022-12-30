@@ -52,7 +52,7 @@ export function MusicForm(props) {
             are able to provide 😇
           </label>
           <div className="flex justify-center items-center pt-4">
-            <div className="flex flex-col justify-center items-center px-16">
+            <div className="flex flex-col justify-center items-center md:px-16 px-8">
               <label className="pb-1">Your Latitude in degrees:</label>
               <input
                 className="bg-inherit border-2 border-slate-300 w-20 text-lg"
@@ -67,7 +67,7 @@ export function MusicForm(props) {
                 Please enter a numerical value between -90 and 90
               </div>
             </div>
-            <div className="flex flex-col justify-center items-center px-16">
+            <div className="flex flex-col justify-center items-center md:px-16 px-8">
               <label className="pb-1">Your Longitude in degrees:</label>
               <input
                 className="bg-inherit border-2 border-slate-300 w-20 text-lg"
