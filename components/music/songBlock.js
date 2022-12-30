@@ -22,7 +22,7 @@ export function SongBlock(props) {
       />
 
       <div
-        className={`flex p-2 ${props.boss.bg} rounded-lg ${
+        className={`flex flex-col md:flex-row p-2 ${props.boss.bg} rounded-lg ${
           props.playing === props.boss.name
             ? "bg-opacity-40 backdrop-blur"
             : "bg-opacity-0 border-opacity-0"
