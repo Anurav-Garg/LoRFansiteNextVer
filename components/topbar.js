@@ -63,7 +63,7 @@ export function Topbar() {
           </div>
         </div>
         <div
-          className={`relative p-1 right-0 text-yellow-400 flex-col backdrop-blur-md float-right bg-slate-900/60 group-focus-within:bg-slate-900/80 gap-4 py-4 transition-all duration-500 ease-in-out ${
+          className={`absolute p-1 right-0 text-yellow-400 flex-col backdrop-blur-md float-right bg-slate-900/60 group-focus-within:bg-slate-900/80 gap-4 py-4 transition-all duration-500 ease-in-out ${
             menuActive ? "flex" : "hidden"
           } ${menuVisible ? "opacity-100" : "opacity-0"}`}
         >
