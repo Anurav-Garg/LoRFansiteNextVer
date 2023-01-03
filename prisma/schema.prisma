@@ -22,5 +22,6 @@ model Review {
   author User @relation(fields: [authorId], references: [id])
   authorId Int @unique
   recommended Boolean
+  title String
   text String
 }
