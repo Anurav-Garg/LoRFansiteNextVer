@@ -27,9 +27,13 @@ export default async function handler(req, res) {
       }
 
       if (await compare(password, existingUser.password)) {
-        const token = sign({ username: username }, process.env.TOKEN_KEY, {
-          expiresIn: "2h",
-        });
+        const token = sign(
+          { id: existingUser.id, username: username },
+          process.env.TOKEN_KEY,
+          {
+            expiresIn: "2h",
+          }
+        );
 
         res.status(200).json({ username: username, token: token });
         return;
@@ -39,6 +43,7 @@ export default async function handler(req, res) {
       }
     } else {
       res.status(400).json({ message: "Request must be a POST request" });
+      return;
     }
   } catch (err) {
     console.log(err);

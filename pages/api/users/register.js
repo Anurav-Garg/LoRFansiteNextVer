@@ -33,11 +33,13 @@ export default async function handler(req, res) {
         },
       });
 
-      const token = sign({ username: user.username }, process.env.TOKEN_KEY, {
-        expiresIn: "2h",
-      });
-      // TEMP:
-      console.log(token);
+      const token = sign(
+        { id: user.id, username: user.username },
+        process.env.TOKEN_KEY,
+        {
+          expiresIn: "2h",
+        }
+      );
 
       res.status(201).json({ username: user.username, token: token });
     } else {
