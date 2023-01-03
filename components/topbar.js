@@ -3,7 +3,7 @@ import Image from "next/image";
 import { MdOutlineMenu } from "react-icons/md";
 import { useState } from "react";
 
-const pagesNames = ["about", "abnormalities", "music", "survey"];
+const pagesNames = ["about", "abnormalities", "music", "reviews", "survey"];
 const pages = pagesNames.map((page) => <PageLink page={page} key={page} />);
 
 export function Topbar() {
