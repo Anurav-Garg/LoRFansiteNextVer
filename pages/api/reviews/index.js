@@ -7,6 +7,7 @@ export default async function handler(req, res) {
     if (req.method === "GET") {
       const reviews = await prisma.review.findMany({
         select: {
+          id: true,
           author: {
             select: {
               username: true,
@@ -14,6 +15,8 @@ export default async function handler(req, res) {
           },
           recommended: true,
           text: true,
+          date: true,
+          title: true,
         },
       });
 
