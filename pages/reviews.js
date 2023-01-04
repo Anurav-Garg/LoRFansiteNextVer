@@ -2,6 +2,7 @@ import Head from "next/head";
 import { ContentContainer } from "../components/common/contentContainer";
 import { PageContainer } from "../components/common/pageContainer";
 import { Topbar } from "../components/topbar";
+import { ReviewsContent } from "../components/reviews/reviewsContent";
 
 export default function Reviews() {
   return (
@@ -10,17 +11,19 @@ export default function Reviews() {
         <title>Reviews from Real™️ Users</title>
       </Head>
       <PageContainer>
-        <ReviewsContent />
+        <ReviewsContents />
       </PageContainer>
     </>
   );
 }
 
-function ReviewsContent() {
+function ReviewsContents() {
   return (
     <>
       <Topbar />
-      <ContentContainer></ContentContainer>
+      <ContentContainer>
+        <ReviewsContent />
+      </ContentContainer>
     </>
   );
 }
