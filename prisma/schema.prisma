@@ -11,17 +11,18 @@ datasource db {
 }
 
 model User {
-  id Int @id @default(autoincrement())
-  username String @unique
+  id       Int     @id @default(autoincrement())
+  username String  @unique
   password String
-  review Review?
+  review   Review?
 }
 
 model Review {
-  id Int @id @default(autoincrement())
-  author User @relation(fields: [authorId], references: [id])
-  authorId Int @unique
+  id          Int      @id @default(autoincrement())
+  author      User     @relation(fields: [authorId], references: [id])
+  authorId    Int      @unique
   recommended Boolean
-  title String
-  text String
+  title       String
+  text        String
+  date        DateTime @default(now())
 }
