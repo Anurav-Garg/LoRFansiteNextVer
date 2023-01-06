@@ -8,7 +8,7 @@ export function useToken() {
     if (tokenString !== "undefined") {
       setToken(tokenString);
     }
-  }, [token]);
+  }, []);
 
   const saveToken = (userToken) => {
     localStorage.setItem("token", userToken);
