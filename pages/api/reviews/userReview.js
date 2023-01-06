@@ -10,20 +10,6 @@ export default async function handler(req, res) {
       return;
     }
 
-    if (!(req.headers.authorization || req.headers["Authorization"])) {
-      res.status(403).json({ message: "Authorization token is required" });
-      return;
-    }
-
-    const [bearer, token] = req.headers.authorization
-      ? req.headers.authorization.split(" ")
-      : req.headers["Authorization"].split(" ");
-
-    if (!token || !bearer || bearer !== "Bearer") {
-      res.status(403).json({ message: "Invalid token" });
-      return;
-    }
-
     const decoded = verifyToken(req, res);
     if (!decoded) {
       return;
