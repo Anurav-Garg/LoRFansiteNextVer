@@ -1,8 +1,6 @@
-import { PrismaClient } from "@prisma/client";
 import { compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
-
-const prisma = new PrismaClient();
+import prisma from "../../../prisma/prisma";
 
 export default async function handler(req, res) {
   try {

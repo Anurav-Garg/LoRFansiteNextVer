@@ -1,7 +1,5 @@
-import { PrismaClient } from "@prisma/client";
 import { verifyToken } from "../../../components/lib/verifyToken";
-
-const prisma = new PrismaClient();
+import prisma from "../../../prisma/prisma";
 
 export default async function handler(req, res) {
   try {
