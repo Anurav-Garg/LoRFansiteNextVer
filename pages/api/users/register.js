@@ -4,7 +4,7 @@ import prisma from "../../../prisma/prisma";
 
 export default async function handler(req, res) {
   try {
-    if (req.method === "POST") {
+    if (req.method !== "POST") {
       res.status(400).json({ message: "Request must be a POST request" });
       return;
     }
