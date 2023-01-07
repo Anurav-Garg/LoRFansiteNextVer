@@ -1,5 +1,5 @@
-import prisma from "../../../prisma/prisma";
 import { verifyToken } from "../../../components/lib/verifyToken";
+import { prisma } from "../../../prisma/client";
 
 export default async function handler(req, res) {
   try {

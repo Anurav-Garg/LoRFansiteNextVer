@@ -1,6 +1,6 @@
 import { compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
-import prisma from "../../../prisma/prisma";
+import { prisma } from "../../../prisma/client";
 
 export default async function handler(req, res) {
   try {
