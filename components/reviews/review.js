@@ -24,7 +24,7 @@ export function Review({ title, text, recommended, author, date }) {
         </div>
       </div>
       <div className="text-sm pt-2">Posted: {date}</div>
-      <div>{text}</div>
+      <div className="whitespace-pre-wrap">{text}</div>
     </div>
   );
 }
