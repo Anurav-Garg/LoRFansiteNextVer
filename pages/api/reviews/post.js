@@ -23,18 +23,18 @@ export default async function handler(req, res) {
     }
 
     const { recommended, title, text } = req.body;
-    // TEMP:
-    console.log(req.body);
 
-    if (!(recommended && title && text)) {
-      res.status(400).json({ message: "All review parameters are required" });
+    if (!(typeof recommended === "boolean" && title && text)) {
+      res.status(400).json({
+        message:
+          "All review parameters are required, and must be of correct type",
+      });
       return;
     }
 
-    const recommendedBool = recommended.toLowerCase() === "true";
     const review = await prisma.review.create({
       data: {
-        recommended: recommendedBool,
+        recommended: recommended,
         title: title,
         text: text,
         author: {
