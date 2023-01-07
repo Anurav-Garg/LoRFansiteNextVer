@@ -35,7 +35,7 @@ export function LoginOrRegister({ setToken }) {
   return (
     <div className="py-4 px-8 bg-slate-900/40 rounded-2xl w-min">
       <div className="text-2xl pb-4">
-        Log in to post your own review of the game!
+        {"Log in to post your own review of the game!"}
       </div>
       <form
         className="flex flex-col"
@@ -46,7 +46,7 @@ export function LoginOrRegister({ setToken }) {
       >
         <div className="flex gap-8 py-4">
           <div className="flex gap-4">
-            <label className="text-lg">Username:</label>
+            <label className="text-lg">{"Username:"}</label>
             <input
               className="bg-inherit border-2 border-slate-300 text-lg"
               value={username}
@@ -55,7 +55,7 @@ export function LoginOrRegister({ setToken }) {
             />
           </div>
           <div className="flex gap-4">
-            <label className="text-lg">Password:</label>
+            <label className="text-lg">{"Password:"}</label>
             <input
               className="bg-inherit border-2 border-slate-300 text-lg"
               value={password}
@@ -83,7 +83,7 @@ export function LoginOrRegister({ setToken }) {
                     password === password2 ? "opacity-0" : "opacity-100"
                   }`}
                 >
-                  Passowrds don't match
+                  {"Passowrds don't match"}
                 </div>
               </div>
             </div>
