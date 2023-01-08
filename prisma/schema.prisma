@@ -6,19 +6,19 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "cockroachdb"
   url      = env("DATABASE_URL")
 }
 
 model User {
-  id       Int     @id @default(autoincrement())
+  id       Int     @id @default(dbgenerated())
   username String  @unique
   password String
   review   Review?
 }
 
 model Review {
-  id          Int      @id @default(autoincrement())
+  id          Int      @id @default(dbgenerated())
   author      User     @relation(fields: [authorId], references: [id])
   authorId    Int      @unique
   recommended Boolean
