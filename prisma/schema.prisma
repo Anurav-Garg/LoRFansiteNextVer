@@ -11,14 +11,14 @@ datasource db {
 }
 
 model User {
-  id       String  @id @default(cuid())
+  id       String  @id @default(dbgenerated("gen_random_uuid()"))
   username String  @unique
   password String
   review   Review?
 }
 
 model Review {
-  id          String   @id @default(cuid())
+  id          String   @id @default(dbgenerated("gen_random_uuid()"))
   author      User     @relation(fields: [authorId], references: [id])
   authorId    String   @unique
   recommended Boolean
