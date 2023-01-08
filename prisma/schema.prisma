@@ -11,16 +11,16 @@ datasource db {
 }
 
 model User {
-  id       BigInt  @id @default(autoincrement())
+  id       String  @id @default(cuid())
   username String  @unique
   password String
   review   Review?
 }
 
 model Review {
-  id          BigInt   @id @default(autoincrement())
+  id          String   @id @default(cuid())
   author      User     @relation(fields: [authorId], references: [id])
-  authorId    BigInt   @unique
+  authorId    String   @unique
   recommended Boolean
   title       String
   text        String
