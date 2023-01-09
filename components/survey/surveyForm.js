@@ -6,7 +6,7 @@ export function SurveyForm({ selection, setSelection, setFormSubmission }) {
     >
       <label htmlFor="masochism-level-select"> Your Answer:</label>
       <select
-        className="bg-inherit border-2 border-slate-300 w-20 mx-auto backdrop-blur-md"
+        className="bg-inherit border-2 border-slate-300 w-20 mx-auto backdrop-blur-md rounded-md px-2 py-[2px]"
         value={selection}
         onChange={(e) => {
           setSelection(e.target.value);

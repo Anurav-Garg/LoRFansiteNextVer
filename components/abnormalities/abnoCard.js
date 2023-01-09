@@ -1,9 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useWindowDimensions } from "../hooks/useWindowsDimensions";
 
 export function AbnoCardLeft(props) {
-  const { height, width } = useWindowDimensions();
   return (
     <>
       <div className="relative z-0" id={props.abnormality.name}>
