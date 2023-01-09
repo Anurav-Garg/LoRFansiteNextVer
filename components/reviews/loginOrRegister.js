@@ -33,7 +33,7 @@ export function LoginOrRegister({ setToken }) {
   };
 
   return (
-    <div className="py-4 px-8 bg-slate-900/40 rounded-2xl w-min">
+    <div className="py-4 px-8 bg-slate-900/40 rounded-2xl">
       <div className="text-2xl pb-4">
         {"Log in to post your own review of the game!"}
       </div>
@@ -44,11 +44,11 @@ export function LoginOrRegister({ setToken }) {
           handleSubmit();
         }}
       >
-        <div className="flex gap-8 py-4">
+        <div className="flex md:flex-row flex-col gap-8 py-4">
           <div className="flex gap-4">
             <label className="text-lg">{"Username:"}</label>
             <input
-              className="bg-inherit border-2 border-slate-300 text-lg"
+              className="bg-inherit border-2 border-slate-300 text-lg grow min-w-0 w-full"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               maxLength={16}
@@ -57,7 +57,7 @@ export function LoginOrRegister({ setToken }) {
           <div className="flex gap-4">
             <label className="text-lg">{"Password:"}</label>
             <input
-              className="bg-inherit border-2 border-slate-300 text-lg"
+              className="bg-inherit border-2 border-slate-300 text-lg grow min-w-0 w-full"
               value={password}
               type={"password"}
               onChange={(e) => setPassword(e.target.value)}
