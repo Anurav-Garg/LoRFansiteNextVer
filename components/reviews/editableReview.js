@@ -201,11 +201,11 @@ export function EditableReview({
         >
           {notification}
         </div>
-        <div className="flex gap-10">
+        <div className="flex flex-col md:flex-row md:gap-10 w-">
           <button
             type="submit"
             disabled={!(review.title && review.text) || postMutation.isLoading}
-            className={`p-2 my-2 text-xl self-start ${
+            className={`p-2 my-2 text-xl self-start w-full ${
               !(review.title && review.text) || postMutation.isLoading
                 ? "text-gray-500 border-gray-500"
                 : "text-yellow-400 hover:text-yellow-200 border-yellow-400 hover:border-yellow-200"
@@ -221,7 +221,7 @@ export function EditableReview({
                 deletePostMutation.mutate();
               }}
               disabled={deletePostMutation.isLoading}
-              className={`p-2 my-2 text-xl self-start ${
+              className={`p-2 my-2 text-xl self-start w-full ${
                 deletePostMutation.isLoading
                   ? "text-gray-500 border-gray-500"
                   : "text-yellow-400 hover:text-yellow-200 border-yellow-400 hover:border-yellow-200"
@@ -232,7 +232,7 @@ export function EditableReview({
           )}
           <button
             type="button"
-            className="p-2 my-2 text-xl self-start text-red-600 hover:text-red-400 border-red-600 hover:border-red-400 backdrop-blur-md border-2 rounded-lg font-semibold transition-colors ease-in-out duration-150"
+            className="p-2 my-2 text-xl self-start w-full text-red-600 hover:text-red-400 border-red-600 hover:border-red-400 backdrop-blur-md border-2 rounded-lg font-semibold transition-colors ease-in-out duration-150"
             onClick={(e) => {
               e.preventDefault();
               setToken("");
@@ -242,7 +242,7 @@ export function EditableReview({
           </button>
           <button
             type="button"
-            className="p-2 my-2 text-xl self-start text-red-600 hover:text-red-400 border-red-600 hover:border-red-400 backdrop-blur-md border-2 rounded-lg font-semibold transition-colors ease-in-out duration-150"
+            className="p-2 my-2 text-xl self-start w-full text-red-600 hover:text-red-400 border-red-600 hover:border-red-400 backdrop-blur-md border-2 rounded-lg font-semibold transition-colors ease-in-out duration-150"
             onClick={(e) => {
               e.preventDefault();
               deleteAccountMutation.mutate();
