@@ -11,16 +11,16 @@ datasource db {
 }
 
 model User {
-  id       String  @id @db.Uuid
+  id       String  @id @default(uuid())
   username String  @unique
   password String
   review   Review?
 }
 
 model Review {
-  id          String   @id @db.Uuid
+  id          String   @id @default(uuid())
   author      User     @relation(fields: [authorId], references: [id])
-  authorId    String   @unique @db.Uuid
+  authorId    String   @unique
   recommended Boolean
   title       String
   text        String
