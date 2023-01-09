@@ -5,10 +5,4 @@ Remake of the [original fansite](https://github.com/Anurav-Garg/LoRFansite), usi
 
 Most functional deployment of the site: <https://fansite-of-ruina-anurav-garg.vercel.app/>
 
-Features in dev version not currently in the above deployment:
-
-- The ability to log in and leave game reviews that all users can se
-- A database to store said reviews and accounts
-- Backend API endpoints to handle all this functionality
-
 Pretty much all assets used are from the game itself.
