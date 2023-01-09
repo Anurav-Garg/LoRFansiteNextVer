@@ -11,14 +11,14 @@ datasource db {
 }
 
 model User {
-  id       String  @id(map: "primary") @db.Uuid
+  id       String  @id @db.Uuid
   username String  @unique
   password String
   review   Review?
 }
 
 model Review {
-  id          String   @id(map: "primary") @db.Uuid
+  id          String   @id @db.Uuid
   author      User     @relation(fields: [authorId], references: [id])
   authorId    String   @unique @db.Uuid
   recommended Boolean
