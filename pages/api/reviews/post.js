@@ -1,6 +1,5 @@
 import { verifyToken } from "../../../components/lib/verifyToken";
 import { prisma } from "../../../prisma/client";
-import { v4 as uuidv4 } from "uuid";
 
 export default async function handler(req, res) {
   try {
@@ -35,7 +34,6 @@ export default async function handler(req, res) {
 
     const review = await prisma.review.create({
       data: {
-        id: uuidv4(),
         recommended: recommended,
         title: title,
         text: text,

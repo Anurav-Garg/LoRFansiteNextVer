@@ -1,7 +1,6 @@
 import { hash } from "bcryptjs";
 import { sign } from "jsonwebtoken";
 import { prisma } from "../../../prisma/client";
-import { v4 as uuidv4 } from "uuid";
 
 export default async function handler(req, res) {
   try {
@@ -32,7 +31,6 @@ export default async function handler(req, res) {
 
     const user = await prisma.user.create({
       data: {
-        id: uuidv4(),
         username: username,
         password: hashedPassword,
       },
